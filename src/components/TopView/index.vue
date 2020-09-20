@@ -3,22 +3,22 @@
     <el-row :gutter="20">
       <el-col :span="6">
         <el-card shadow="hover">
-          鼠标悬浮显示
+          <TotalSales />
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card shadow="hover">
-          鼠标悬浮显示
+          <TotalOrder />
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card shadow="hover">
-          鼠标悬浮显示
+          <TodayUsers />
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card shadow="hover">
-          鼠标悬浮显示
+          <TotalUsers />
         </el-card>
       </el-col>
     </el-row>
@@ -26,7 +26,19 @@
 </template>
 
 <script>
-export default {};
+import TotalSales from '../TotalSales'
+import TotalOrder from '../TotalOrder'
+import TotalUsers from '../TotalUsers'
+import TodayUsers from '../TodayUsers'
+export default {
+  name: 'top-view',
+  components: {
+        TotalSales,
+        TotalOrder,
+        TotalUsers,
+        TodayUsers
+    }
+};
 </script>
 
 <style lang="scss">
