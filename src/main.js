@@ -7,7 +7,7 @@ import Echarts from 'echarts'
 
 
 Vue.config.productionTip = false
-Vue.config.$echarts = Echarts
+Vue.prototype.$echarts = Echarts
 
 new Vue({
   router,
