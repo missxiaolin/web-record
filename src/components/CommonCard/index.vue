@@ -44,3 +44,11 @@ export default {
   font-size: 12px;
 }
 </style>
+
+<style lang="scss">
+.emphasis {
+  margin-left: 5px;
+  color: #333;
+  font-weight: 700;
+}
+</style>
