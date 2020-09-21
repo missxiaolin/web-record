@@ -72,7 +72,7 @@ export default {
                   y: 3,
                   width: 20,
                   height: 20,
-                  layout: 'cover', // 填充
+                  // layout: 'cover', // 填充
                 },
                 style: {
                   fill: '#45c946'
@@ -85,7 +85,7 @@ export default {
                   y: -23,
                   width: 20,
                   height: 20,
-                  layout: 'cover'
+                  // layout: 'cover'
                 },
                 style: {
                   fill: '#45c946'
