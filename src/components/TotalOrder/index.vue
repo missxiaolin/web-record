@@ -2,7 +2,7 @@
   <div>
     <CommonCard title="累计订单量" value="2,157,420">
       <template>
-        <div id="total-orders-chart"></div>
+        <v-chart :options="getOptions()" />
       </template>
       <template v-slot:footer>
         <span>昨日订单量</span>
@@ -13,52 +13,77 @@
 </template>
 
 <script>
-import commonCardMixin from '../../mixins/commonCardMixin'
+import commonCardMixin from "../../mixins/commonCardMixin";
 
 export default {
-    name: 'total-order',
-    mixins: [commonCardMixin],
-    mounted() {
-      const charDom = document.getElementById('total-orders-chart')
-      const chart = this.$echarts.init(charDom)
-      chart.setOption({
+  name: "total-order",
+  mixins: [commonCardMixin],
+  data() {
+    return {
+      data: {},
+    };
+  },
+  mounted() {},
+  methods: {
+    getOptions() {
+      return {
         xAxis: {
-          type: 'category',
+          type: "category",
           show: false, // 是否显示x轴
           boundaryGap: false, // x 两侧有边距
         },
         yAxis: {
-          show: false
+          show: false,
         },
-        series: [{
-          type: "line",
-          data: [620, 432, 220, 121, 342, 333, 555, 660, 121, 342, 333, 555, 660, 342, 333, 555, 660],
-          areaStyle: {
-            color: 'purple'
+        series: [
+          {
+            type: "line",
+            data: [
+              620,
+              432,
+              220,
+              121,
+              342,
+              333,
+              555,
+              660,
+              121,
+              342,
+              333,
+              555,
+              660,
+              342,
+              333,
+              555,
+              660,
+            ],
+            areaStyle: {
+              color: "purple",
+            },
+            lineStyle: {
+              width: 0,
+            },
+            itemStyle: {
+              opacity: 0,
+            },
+            smooth: true,
           },
-          lineStyle: {
-            width: 0
-          },
-          itemStyle: {
-            opacity: 0
-          },
-          smooth: true
-        }],
+        ],
         // 设置图片间距
         grid: {
           top: 0,
           bottom: 0,
           left: 0,
-          right: 0
-        }
-      })
-    
-    }
+          right: 0,
+        },
+      };
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-#total-orders-chart {
+.echarts {
   width: 100%;
   height: 100%;
 }
