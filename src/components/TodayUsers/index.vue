@@ -2,9 +2,7 @@
   <div>
       <CommonCard title="进入交易用户数" value="81,014">
         <template>
-          <div id="today-users-chart">
-
-          </div>
+          <v-chart :options="getOptions()" />
         </template>
         <template v-slot:footer>
           <span>退货率 </span>
@@ -20,9 +18,11 @@ export default {
     name: 'today-users',
     mixins: [commonCardMixin],
     mounted() {
-      const charDom = document.getElementById('today-users-chart')
-      const chart = this.$echarts.init(charDom)
-      chart.setOption({
+      
+    },
+    methods: {
+      getOptions() {
+        return {
         color: ['#3398DB'],
         xAxis: {
           type: 'category',
@@ -43,13 +43,14 @@ export default {
           type: 'bar',
           data: [410, 82, 200, 334, 390, 330, 220, 150, 82, 200, 134]
         }]
-      })
+      }
+      }
     }
 };
 </script>
 
 <style lang="scss" scoped>
-#today-users-chart {
+.echarts {
   width: 100%;
   height: 100%;
 }
