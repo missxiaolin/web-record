@@ -1,37 +1,34 @@
 <template>
   <div>
-      <CommonCard 
-      title="累计销售额"
-      value="￥ 32,039,165"
-      >
-        <template>
-          <div class="compare-wrapper">
-            <div class="compare">
-              <span>日同比</span>
-              <span class="emphasis">7.33%</span>
-              <div class="increase"></div>
-            </div>
-            <div class="compare">
-              <span>月同比</span>
-              <span class="emphasis">7.33%</span>
-              <div class="decrease"></div>
-            </div>
+    <CommonCard title="累计销售额" value="￥ 32,039,165">
+      <template>
+        <div class="compare-wrapper">
+          <div class="compare">
+            <span>日同比</span>
+            <span class="emphasis">7.33%</span>
+            <div class="increase"></div>
           </div>
-        </template>
-        <template v-slot:footer>
-          <span>昨日销售额 </span>
-          <span class="emphasis">￥ 32,039,165</span>
-        </template>
-      </CommonCard>
+          <div class="compare">
+            <span>月同比</span>
+            <span class="emphasis">7.33%</span>
+            <div class="decrease"></div>
+          </div>
+        </div>
+      </template>
+      <template v-slot:footer>
+        <span>昨日销售额 </span>
+        <span class="emphasis">￥ 32,039,165</span>
+      </template>
+    </CommonCard>
   </div>
 </template>
 
 <script>
-import commonCardMixin from '../../mixins/commonCardMixin'
+import commonCardMixin from "../../mixins/commonCardMixin";
 
 export default {
-    name: 'total-sales',
-    mixins: [commonCardMixin]
+  name: "total-sales",
+  mixins: [commonCardMixin],
 };
 </script>
 
@@ -67,5 +64,4 @@ export default {
     margin: 3px 0 0 5px;
   }
 }
-
 </style>

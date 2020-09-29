@@ -26,18 +26,18 @@
 </template>
 
 <script>
-import TotalSales from '../TotalSales'
-import TotalOrder from '../TotalOrder'
-import TotalUsers from '../TotalUsers'
-import TodayUsers from '../TodayUsers'
+import TotalSales from "../TotalSales";
+import TotalOrder from "../TotalOrder";
+import TotalUsers from "../TotalUsers";
+import TodayUsers from "../TodayUsers";
 export default {
-  name: 'top-view',
+  name: "top-view",
   components: {
-        TotalSales,
-        TotalOrder,
-        TotalUsers,
-        TodayUsers
-    }
+    TotalSales,
+    TotalOrder,
+    TotalUsers,
+    TodayUsers,
+  },
 };
 </script>
 
