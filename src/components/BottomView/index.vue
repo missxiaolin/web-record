@@ -7,7 +7,7 @@
         </template>
         <template>
           <div class="chart-wrapper">
-            <div class="chart-wrapper">
+            <div class="chart-inner">
               <div class="chart">
                 <div class="chart-title">搜索用户数</div>
                 <div class="chart-data">93,635</div>
@@ -21,9 +21,17 @@
             </div>
             <div class="table-wrapper">
               <el-table :data="tableData">
-                <el-table-column />
+                <el-table-column prop="rank" label="排名" width="180" />
+                <el-table-column prop="keyword" label="关键词" width="180" />
+                <el-table-column prop="count" label="总搜索量" />
+                <el-table-column prop="user" label="搜索用户数" />
               </el-table>
-              <el-pagination />
+              <el-pagination
+              layout="prev, pager, next"
+              :total="100"
+              :page-size="4"
+              @current-change="onPageChange"
+               />
             </div>
           </div>
         </template>
@@ -54,17 +62,79 @@
 export default {
   data() {
     return {
-      searchUserOption: {},
+      searchUserOption: {
+        xAxis: {
+          type: 'category',
+          boundaryGap: false
+        },
+        yAxis: {
+          show: false,
+          min: 0,
+          max: 300 
+        },
+        series: [{
+          type: 'line',
+          data: [100, 200, 44, 33, 55, 77],
+          areaStyle: {
+            color: 'rgba(95, 187, 255, .5)'
+          },
+          lineStyle: {
+            color: 'rgba(95, 187, 255)'
+          },
+          itemStyle: {
+            opacity: 0
+          },
+          smooth: true, // 平滑
+        }],
+        grid: {
+          top: 0,
+          left: 0,
+          bottom: 0,
+          right: 0
+        }
+      },
       searchNumberOption: {},
-      tableData: [],
+      tableData: [
+        {
+          id: 1,
+          rank: 1,
+          keyword: '北京',
+          count: 100,
+          user: 90,
+          range: 90
+        }, {
+          id: 2,
+          rank: 1,
+          keyword: '北京',
+          count: 100,
+          user: 90,
+          range: 90
+        }, {
+          id: 3,
+          rank: 1,
+          keyword: '北京',
+          count: 100,
+          user: 90,
+          range: 90
+        }
+      ],
       radioSelect: "品类",
       categoryOtion: {},
     };
   },
+  methods: {
+    onPageChange(page) {
+
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+.echarts {
+  width: 100%;
+  height: 50px;
+}
 .bottom-view {
   display: flex;
   margin-top: 20px;
@@ -92,6 +162,41 @@ export default {
         display: flex;
         justify-content: flex-end;
         padding-right: 20px;
+      }
+    }
+  }
+  .chart-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 452px;
+    .chart-inner {
+      display: flex;
+      padding: 0 10px;
+      margin-top: 20px;
+      .chart {
+        width: 50%;
+        flex: 1;
+        padding: 0 10px;
+        .chart-title {
+          color: #999;
+          font-size: 14px;
+        }
+        .chart-data {
+          font-size: 22px;
+          color: #333;
+          font-weight: 500;
+          letter-spacing: 2px;
+        }
+      }
+    }
+    .table-wrapper {
+      flex: 1;
+      margin-top: 20px;
+      padding: 0 20px 20px;
+      .el-pagination {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 15px;
       }
     }
   }
