@@ -141,7 +141,8 @@ export default {
           percent: "15.40%",
           itemStyle: {
             color: '#e7e702'
-          }
+          },
+          name: '粉面粥店 | 15.40%'
         },
         {
           legendname: "简餐便当",
@@ -149,7 +150,8 @@ export default {
           percent: "22.30%",
           itemStyle: {
             color: '#8d7fec'
-          }
+          },
+          name: '简餐便当 | 22.30%'
         },
         {
           legendname: "汉堡披萨",
@@ -157,7 +159,8 @@ export default {
           percent: "21.15%",
           itemStyle: {
             color: '#5085f2'
-          }
+          },
+          name: '汉堡披萨 | 21.15%'
         },
       ];
       this.categoryOption = {
@@ -170,9 +173,24 @@ export default {
             },
             left: 20,
             top: 20,
-          },
+          }, {
+            text: "累计订单量",
+            subtext: '320',
+            x: '34.5%',
+            y: '42.5%',
+            textStyle: {
+              fontSize: 14,
+              color: '#999'
+            },
+            subtextStyle: {
+              fontSize: 28,
+              color: '#333'
+            },
+            textAlign: 'center'
+          }
         ],
         series: [{
+          name: '品类分布',
           type: 'pie',
           data: mockData,
           label: {
@@ -192,10 +210,32 @@ export default {
               length2: 3
             }
           },
-          clockwise: {
-            
+          clockwise: false,
+          itemStyle: {
+            borderWidth: 4,
+            borderColor: '#fff'
           }
-        }]
+        }],
+        legend: {
+          type: 'scroll',
+          orient: 'vertical',
+          height: 250,
+          left: '70%',
+          top: 'middle',
+          textStyle: {
+            color: '#8c8c8c'
+          }
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: function(e) {
+            let str = `${e.seriesName}<br />${e.marker}${e.data.legendname}<br />数量：${e.data.value}<br />占比：${e.data.percent}%`
+            return str
+          },
+          textStyle: {
+            fontSize: 12
+          }
+        }
       };
     },
   },
