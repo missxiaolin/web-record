@@ -27,11 +27,11 @@
                 <el-table-column prop="user" label="搜索用户数" />
               </el-table>
               <el-pagination
-              layout="prev, pager, next"
-              :total="100"
-              :page-size="4"
-              @current-change="onPageChange"
-               />
+                layout="prev, pager, next"
+                :total="100"
+                :page-size="4"
+                @current-change="onPageChange"
+              />
             </div>
           </div>
         </template>
@@ -51,7 +51,9 @@
           </div>
         </template>
         <template>
-          <v-chart :options="categoryOtion" />
+          <div class="chart-wrapper">
+            <v-chart :options="categoryOption" />
+          </div>
         </template>
       </el-card>
     </div>
@@ -64,76 +66,146 @@ export default {
     return {
       searchUserOption: {
         xAxis: {
-          type: 'category',
-          boundaryGap: false
+          type: "category",
+          boundaryGap: false,
         },
         yAxis: {
           show: false,
           min: 0,
-          max: 300 
+          max: 300,
         },
-        series: [{
-          type: 'line',
-          data: [100, 200, 44, 33, 55, 77],
-          areaStyle: {
-            color: 'rgba(95, 187, 255, .5)'
+        series: [
+          {
+            type: "line",
+            data: [100, 200, 44, 33, 55, 77],
+            areaStyle: {
+              color: "rgba(95, 187, 255, .5)",
+            },
+            lineStyle: {
+              color: "rgba(95, 187, 255)",
+            },
+            itemStyle: {
+              opacity: 0,
+            },
+            smooth: true, // 平滑
           },
-          lineStyle: {
-            color: 'rgba(95, 187, 255)'
-          },
-          itemStyle: {
-            opacity: 0
-          },
-          smooth: true, // 平滑
-        }],
+        ],
         grid: {
           top: 0,
           left: 0,
           bottom: 0,
-          right: 0
-        }
+          right: 0,
+        },
       },
       searchNumberOption: {},
       tableData: [
         {
           id: 1,
           rank: 1,
-          keyword: '北京',
+          keyword: "北京",
           count: 100,
           user: 90,
-          range: 90
-        }, {
+          range: 90,
+        },
+        {
           id: 2,
           rank: 1,
-          keyword: '北京',
+          keyword: "北京",
           count: 100,
           user: 90,
-          range: 90
-        }, {
+          range: 90,
+        },
+        {
           id: 3,
           rank: 1,
-          keyword: '北京',
+          keyword: "北京",
           count: 100,
           user: 90,
-          range: 90
-        }
+          range: 90,
+        },
       ],
       radioSelect: "品类",
-      categoryOtion: {},
+      categoryOption: {},
     };
   },
+  mounted() {
+    this.renderPieChart()
+  },
   methods: {
-    onPageChange(page) {
-
-    }
-  }
+    onPageChange(page) {},
+    renderPieChart() {
+      const mockData = [
+        {
+          legendname: "粉面粥店",
+          value: 67,
+          percent: "15.40%",
+          itemStyle: {
+            color: '#e7e702'
+          }
+        },
+        {
+          legendname: "简餐便当",
+          value: 97,
+          percent: "22.30%",
+          itemStyle: {
+            color: '#8d7fec'
+          }
+        },
+        {
+          legendname: "汉堡披萨",
+          value: 92,
+          percent: "21.15%",
+          itemStyle: {
+            color: '#5085f2'
+          }
+        },
+      ];
+      this.categoryOption = {
+        title: [
+          {
+            text: "品类分布",
+            textStyle: {
+              fonSize: 14,
+              color: "#666",
+            },
+            left: 20,
+            top: 20,
+          },
+        ],
+        series: [{
+          type: 'pie',
+          data: mockData,
+          label: {
+            normal: {
+              show: true,
+              position: 'outter',
+              formatter: function (e) {
+                return `${e.data.legendname} | ${e.data.percent}`
+              }
+            }
+          },
+          center: ['35%', '50%'],
+          radius: ['45%', '60%'],
+          labelLine: {
+            normal: {
+              length: 5,
+              length2: 3
+            }
+          },
+          clockwise: {
+            
+          }
+        }]
+      };
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .echarts {
   width: 100%;
-  height: 50px;
+  height: 100%;
 }
 .bottom-view {
   display: flex;
