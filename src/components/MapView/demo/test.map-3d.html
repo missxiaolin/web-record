@@ -29,10 +29,11 @@
         function init() {
             var map = new BMapGL.Map("container");
             var point = new BMapGL .Point(116.404, 39.915);
-            map.centerAndZoom(point, 30);
+            map.centerAndZoom(point, 5);
             map.enableScrollWheelZoom(true);
             map.setHeading(0);
             map.setTilt(70);
+            map.setMapType(BMAP_EARTH_MAP);
         }
         /**
          * 加载js
