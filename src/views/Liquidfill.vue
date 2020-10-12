@@ -14,15 +14,15 @@ export default {
         {
           type: "liquidFill",
           data,
-          color: ['red', 'blue', 'yellow'], // 颜色控制
+          color: ["red", "blue", "yellow"], // 颜色控制
           itemStyle: {
-              opacity: 0.6, // 透明度
+            opacity: 0.6, // 透明度
           },
           emphasis: {
-              itemStyle: {
-                  opacity: 0.9, // 选中透明度
-              }
-          }
+            itemStyle: {
+              opacity: 0.9, // 选中透明度
+            },
+          },
         },
       ],
     });
@@ -31,5 +31,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#container {width: 100%;height: 100vh;}
+#container {
+  width: 100%;
+  height: 100vh;
+}
 </style>
