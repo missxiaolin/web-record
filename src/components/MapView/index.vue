@@ -19,7 +19,9 @@
           <div class="title">热门搜索</div>
         </template>
         <template>
-          <div class="chart-wrapper">222</div>
+          <div class="chart-wrapper">
+            <WordCloud />
+          </div>
         </template>
       </el-card>
     </div>
@@ -29,11 +31,13 @@
 <script>
 import BMapScatter from '../BMapScatter'
 import LiqiudFill from '../LiqiudFill'
+import WordCloud from '../WordCloud'
 
 export default {
   components: {
     BMapScatter,
-    LiqiudFill
+    LiqiudFill,
+    WordCloud
   },
   mounted() {
     
