@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Bmap from '../views/BMap.vue'
 import Bmap2 from '../views/BMap2.vue'
 import Liquidfill from '../views/Liquidfill.vue'
+import WordCloud from '../views/WordCloud.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,10 @@ const routes = [
     path: '/liqu',
     name: 'liqu',
     component: Liquidfill
+  }, {
+    path: '/word',
+    name: 'word',
+    component: WordCloud
   }
 ]
 
