@@ -22,8 +22,13 @@ export default {
     BottomView,
     MapView
   },
+  provide() { // 向子组件传参，子组件可以再inject接收
+    return {
+
+    }
+  },
   mounted() {
-    wordcloud()
+    // wordcloud()
   }
 }
 </script>
