@@ -12,10 +12,14 @@ import TopView from '../components/TopView'
 import SaleView from '../components/SaleView'
 import BottomView from '../components/BottomView'
 import MapView from '../components/MapView'
-import { wordcloud } from '../api/index'
 
 export default {
   name: 'Home',
+  data() {
+    return {
+      wordCloud: 'ceshi'
+    }
+  },
   components: {
     TopView,
     SaleView,
@@ -24,11 +28,16 @@ export default {
   },
   provide() { // 向子组件传参，子组件可以再inject接收
     return {
-
+      getWordCloud: this.getWordCloud
     }
   },
   mounted() {
-    // wordcloud()
+    // console.log(this.getWordCloud())
+  },
+  methods: {
+    getWordCloud() {
+      return this.wordCloud
+    }
   }
 }
 </script>

@@ -6,6 +6,7 @@
       </template>
       <template v-slot:footer>
         <span>昨日订单量</span>
+        <!-- <span>昨日订单量{{reportData}}</span> -->
         <span class="emphasis">2,157,420</span>
       </template>
     </CommonCard>
@@ -14,10 +15,11 @@
 
 <script>
 import commonCardMixin from "../../mixins/commonCardMixin";
+import commonDataMixin from "../../mixins/commonDataMixin";
 
 export default {
   name: "total-order",
-  mixins: [commonCardMixin],
+  mixins: [commonCardMixin, commonDataMixin],
   data() {
     return {
       data: {},
