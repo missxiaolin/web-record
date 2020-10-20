@@ -1,18 +1,20 @@
+<template>
+  <div>
+      <button @click="add">{{ state.count }}</button>
+        double count: {{doubleCount}}
+  </div>
+</template>
 <script>
-import { reactive, watchEffect } from 'vue'
+import useTest from './useTest'
 
-// 类似reacr 中的 useState
-const state = reactive({
-    count: 1
-})
-
-const add = () => {
-    state.count++
+export default {
+    setup() {
+        const { add, state, doubleCount } = useTest()
+        return {
+            add,
+            state,
+            doubleCount
+        }
+    }
 }
-
-// 类似 react hooks 中的 useEffect
-watchEffect(() => {
-    document.body.innerHTML = `测试${state.count}`
-    document.body.addEventListener('click', add)
-})
 </script>
