@@ -32,11 +32,18 @@ export default function useTest() {
         console.log('state.count changed:' + state.count)
     })
 
+    const aa = computed(() => ctx.$store.getters.aaValue)
+    const updateAA = () => {
+        ctx.$store.commit('SET_AA', ctx.$store.state.a.aa + 1)
+    }
+
     return {
         state,
         add,
         doubleCount,
         a,
+        aa,
+        updateAA,
         gotoAbout,
         number,
         updateNumber

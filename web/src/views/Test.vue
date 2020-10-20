@@ -5,6 +5,7 @@
         <button @click="gotoAbout">测试跳转</button>
         <button @click="updateNumber">vuex 测试</button>
         <div>{{number}}</div>
+        <div>{{aa}}</div>
   </div>
 </template>
 <script>
@@ -12,14 +13,15 @@ import useTest from './useTest'
 
 export default {
     setup() {
-        const { add, state, doubleCount, gotoAbout, number, updateNumber } = useTest()
+        const { add, state, doubleCount, gotoAbout, number, updateNumber, aa } = useTest()
         return {
             add,
             state,
             doubleCount,
             gotoAbout,
             number,
-            updateNumber
+            updateNumber,
+            aa
         }
     }
 }

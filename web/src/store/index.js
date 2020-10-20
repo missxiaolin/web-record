@@ -26,5 +26,8 @@ export default createStore({
       }
     },
     b: {}
+  },
+  getters: {
+    aaValue: (state) => state.a.aa
   }
 })
