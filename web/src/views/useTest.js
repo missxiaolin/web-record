@@ -18,6 +18,14 @@ export default function useTest() {
         ctx.$router.push('/about')
     }
 
+    const number = computed(() => ctx.$store.state.number)
+
+    const updateNumber = () => {
+        // ctx.$store.commit('SET_NUMBER', state.count * 100 + 1) // commit 方法1
+        ctx.$store.dispatch('setNumber', state.count * 100 + 1) // 通过action 修改
+
+    }
+
     const doubleCount = computed(() => state.count * 2)
 
     watch(() => state.count, () =>{
@@ -29,7 +37,9 @@ export default function useTest() {
         add,
         doubleCount,
         a,
-        gotoAbout
+        gotoAbout,
+        number,
+        updateNumber
     }
 }
 
