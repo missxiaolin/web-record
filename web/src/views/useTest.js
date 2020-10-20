@@ -1,6 +1,9 @@
-import { ref, reactive, computed, watch } from "vue";
+import { ref, reactive, computed, watch, getCurrentInstance } from "vue";
 
 export default function useTest() {
+    const { ctx } = getCurrentInstance()
+    console.log(ctx.$router)
+
     const a = ref(1)
     // 类似reacr 中的 useState
     const state = reactive({
@@ -10,6 +13,10 @@ export default function useTest() {
     const add = () => {
         state.count++;
     };
+
+    const gotoAbout = () => {
+        ctx.$router.push('/about')
+    }
 
     const doubleCount = computed(() => state.count * 2)
 
@@ -21,7 +28,8 @@ export default function useTest() {
         state,
         add,
         doubleCount,
-        a
+        a,
+        gotoAbout
     }
 }
 
