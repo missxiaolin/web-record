@@ -1,7 +1,6 @@
 <template>
   <div id="icon-wrapper">
-    <svg-component></svg-component>
-    <icon-component name="close" class="icon"></icon-component>
+    <svg-animation></svg-animation>
   </div>
 </template>
 
