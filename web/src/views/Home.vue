@@ -44,29 +44,16 @@
 
 <script>
 import { ref, onMounted } from 'vue'
+import totalUserData from '../hooks/totalUser'
 
 export default {
   name: "Home",
   components: {},
   setup(props) {
-    let todayUser = ref(1000),
-      growthLastDay = ref(10),
-      growthLastMonth = ref(15)
-    
-    onMounted(() => {
-      setInterval(() => {
-        todayUser.value = todayUser.value + 1;
-        growthLastDay.value = growthLastDay.value + 1
-        growthLastMonth.value = growthLastMonth.value + 1
-      }, 1000);
-    })
-    
     let isLoading = true;
     return {
       isLoading,
-      todayUser,
-      growthLastDay,
-      growthLastMonth
+      ...totalUserData()
     };
   },
 };
