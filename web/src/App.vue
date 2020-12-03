@@ -1,6 +1,6 @@
 <template>
   <div id="icon-wrapper">
-    <svg-animation></svg-animation>
+    <router-view></router-view>
   </div>
 </template>
 

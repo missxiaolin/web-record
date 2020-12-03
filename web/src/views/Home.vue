@@ -1,18 +1,238 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <container v-if="isLoading" :options="{ width: 3840, height: 2160 }">
+      <div class="header">
+        <logo></logo>
+        <!-- <top-header><top-header/> -->
+      </div>
+      <div class="separator"></div>
+      <div class="center">
+        <div class="left">
+          <div class="left1">
+            <total-user
+              :today-user="todayUser"
+              :growth-last-day="growthLastDay"
+              :growth-last-month="growthLastMonth"
+            ></total-user>
+          </div>
+          <div class="left2">2</div>
+          <div class="left3">3</div>
+          <div class="left4">4</div>
+          <div class="left5">5</div>
+          <div class="left6">6</div>
+        </div>
+        <div class="right">
+          <div class="right-top1">right-top1</div>
+          <div class="right-top2">right-top2</div>
+          <div class="right-bottom">
+            <div class="right-left">
+              <div class="right-left1">right-left1</div>
+              <div class="right-left2">right-left2</div>
+              <div class="right-left3">right-left3</div>
+              <div class="right-left4">right-left4</div>
+            </div>
+            <div class="right-right">
+              <div class="right-right1">right-right1</div>
+              <div class="right-right2">right-right1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </container>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { ref, onMounted } from 'vue'
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  name: "Home",
+  components: {},
+  setup(props) {
+    let todayUser = ref(1000),
+      growthLastDay = ref(10),
+      growthLastMonth = ref(15)
+    
+    onMounted(() => {
+      setInterval(() => {
+        todayUser.value = todayUser.value + 1;
+        growthLastDay.value = growthLastDay.value + 1
+        growthLastMonth.value = growthLastMonth.value + 1
+      }, 1000);
+    })
+    
+    let isLoading = true;
+    return {
+      isLoading,
+      todayUser,
+      growthLastDay,
+      growthLastMonth
+    };
+  },
+};
 </script>
+
+<style>
+    html,
+    body,
+    #app {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #app {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(29, 29, 29);
+        font-size: 20px;
+        color: #ffffff;
+    }
+
+    #containerBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .header {
+        width: 100%;
+        height: 167px;
+    }
+
+    .separator {
+        width: 100%;
+        height: 10px;
+        background: rgb(92, 88, 89);
+    }
+
+    .center {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        background: rebeccapurple;
+    }
+
+    .center .left {
+        flex: 0 0 860px;
+        background: red;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 860px;
+        height: 100%;
+        padding-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+    .center .left .left1 {
+        height: 300px;
+        background: green;
+    }
+
+    .center .left .left2 {
+        height: 320px;
+        background: yellow;
+    }
+
+    .center .left .left3 {
+        height: 280px;
+        background: mediumblue;
+    }
+
+    .center .left .left4 {
+        height: 230px;
+        background: burlywood;
+    }
+
+    .center .left .left5 {
+        height: 360px;
+        background: mediumorchid;
+    }
+
+    .center .left .left6 {
+        height: 360px;
+        background: mediumturquoise;
+    }
+
+    .center .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: blue;
+    }
+
+    .center .right .right-top1 {
+        width: 100%;
+        height: 206px;
+        background: darkblue;
+    }
+
+    .center .right .right-top2 {
+        width: 100%;
+        height: 48px;
+        background: cadetblue;
+    }
+
+    .center .right .right-bottom {
+        flex: 1;
+        display: flex;
+        padding-bottom: 20px;
+    }
+
+    .right-bottom .right-left {
+        flex: 0 0 1917px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 1917px;
+    }
+
+    .right-bottom .right-left .right-left1 {
+        height: 999px;
+        background: red;
+    }
+
+    .right-bottom .right-left .right-left2 {
+        height: 80px;
+        background: green;
+    }
+
+    .right-bottom .right-left .right-left3 {
+        height: 350px;
+        background: deeppink;
+    }
+
+    .right-bottom .right-left .right-left4 {
+        height: 224px;
+        background: forestgreen;
+    }
+
+    .right-bottom .right-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 10px;
+    }
+
+    .right-bottom .right-right .right-right1 {
+        width: 100%;
+        height: 999px;
+        background: yellow;
+    }
+
+    .right-bottom .right-right .right-right2 {
+        width: 100%;
+        flex: 1;
+        margin-top: 20px;
+        background: red;
+    }
+</style>
