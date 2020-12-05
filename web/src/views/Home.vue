@@ -2,8 +2,7 @@
   <div class="home">
     <container v-if="isLoading" :options="{ width: 3840, height: 2160 }">
       <div class="header">
-        <logo></logo>
-        <!-- <top-header><top-header/> -->
+        <top-header></top-header>
       </div>
       <div class="separator"></div>
       <div class="center">
