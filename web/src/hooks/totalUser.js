@@ -36,8 +36,14 @@ export default function () {
             todayUser.value = todayUser.value + 10;
             growthLastDay.value = growthLastDay.value + 1
             growthLastMonth.value = growthLastMonth.value + 1
-            averageAge.value = averageAge.value + 1
-        }, 1000);
+            averageAge.value = averageAge.value + 2
+            const _ageData = [...ageData.value]
+            _ageData.forEach(item => {
+                item.startValue = item.value
+                item.value = item.value + 10
+            })
+            ageData.value = _ageData
+        }, 3000);
     })
 
     onUnmounted(() => {

@@ -15,7 +15,10 @@
             ></total-user>
           </div>
           <div class="left2">
-            <average-age :data="ageData"></average-age>
+            <average-age 
+            :data="ageData"
+            :avg-age="averageAge"
+            ></average-age>
           </div>
           <div class="left3">3</div>
           <div class="left4">4</div>
@@ -44,8 +47,8 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
-import totalUserData from '../hooks/totalUser'
+import { ref, onMounted } from "vue";
+import totalUserData from "../hooks/totalUser";
 
 export default {
   name: "Home",
@@ -54,168 +57,168 @@ export default {
     let isLoading = true;
     return {
       isLoading,
-      ...totalUserData()
+      ...totalUserData(),
     };
   },
 };
 </script>
 
 <style>
-    html,
-    body,
-    #app {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-    #app {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: rgba(29, 29, 29);
-        font-size: 20px;
-        color: #ffffff;
-    }
+#app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(29, 29, 29);
+  font-size: 20px;
+  color: #ffffff;
+}
 
-    #containerBox {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-    }
+#containerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
 
-    .header {
-        width: 100%;
-        height: 167px;
-    }
+.header {
+  width: 100%;
+  height: 167px;
+}
 
-    .separator {
-        width: 100%;
-        height: 10px;
-    }
+.separator {
+  width: 100%;
+  height: 10px;
+}
 
-    .center {
-        width: 100%;
-        flex: 1;
-        display: flex;
-    }
+.center {
+  width: 100%;
+  flex: 1;
+  display: flex;
+}
 
-    .center .left {
-        flex: 0 0 860px;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        width: 860px;
-        height: 100%;
-        padding-bottom: 20px;
-        box-sizing: border-box;
-    }
+.center .left {
+  flex: 0 0 860px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 860px;
+  height: 100%;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
 
-    .center .left .left1 {
-        height: 300px;
-    }
+.center .left .left1 {
+  height: 300px;
+}
 
-    .center .left .left2 {
-        height: 320px;
-    }
+.center .left .left2 {
+  height: 320px;
+}
 
-    .center .left .left3 {
-        height: 280px;
-        background: mediumblue;
-    }
+.center .left .left3 {
+  height: 280px;
+  background: mediumblue;
+}
 
-    .center .left .left4 {
-        height: 230px;
-        background: burlywood;
-    }
+.center .left .left4 {
+  height: 230px;
+  background: burlywood;
+}
 
-    .center .left .left5 {
-        height: 360px;
-        background: mediumorchid;
-    }
+.center .left .left5 {
+  height: 360px;
+  background: mediumorchid;
+}
 
-    .center .left .left6 {
-        height: 360px;
-        background: mediumturquoise;
-    }
+.center .left .left6 {
+  height: 360px;
+  background: mediumturquoise;
+}
 
-    .center .right {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        background: blue;
-    }
+.center .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: blue;
+}
 
-    .center .right .right-top1 {
-        width: 100%;
-        height: 206px;
-        background: darkblue;
-    }
+.center .right .right-top1 {
+  width: 100%;
+  height: 206px;
+  background: darkblue;
+}
 
-    .center .right .right-top2 {
-        width: 100%;
-        height: 48px;
-        background: cadetblue;
-    }
+.center .right .right-top2 {
+  width: 100%;
+  height: 48px;
+  background: cadetblue;
+}
 
-    .center .right .right-bottom {
-        flex: 1;
-        display: flex;
-        padding-bottom: 20px;
-    }
+.center .right .right-bottom {
+  flex: 1;
+  display: flex;
+  padding-bottom: 20px;
+}
 
-    .right-bottom .right-left {
-        flex: 0 0 1917px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 1917px;
-    }
+.right-bottom .right-left {
+  flex: 0 0 1917px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1917px;
+}
 
-    .right-bottom .right-left .right-left1 {
-        height: 999px;
-        background: red;
-    }
+.right-bottom .right-left .right-left1 {
+  height: 999px;
+  background: red;
+}
 
-    .right-bottom .right-left .right-left2 {
-        height: 80px;
-        background: green;
-    }
+.right-bottom .right-left .right-left2 {
+  height: 80px;
+  background: green;
+}
 
-    .right-bottom .right-left .right-left3 {
-        height: 350px;
-        background: deeppink;
-    }
+.right-bottom .right-left .right-left3 {
+  height: 350px;
+  background: deeppink;
+}
 
-    .right-bottom .right-left .right-left4 {
-        height: 224px;
-        background: forestgreen;
-    }
+.right-bottom .right-left .right-left4 {
+  height: 224px;
+  background: forestgreen;
+}
 
-    .right-bottom .right-right {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-left: 10px;
-    }
+.right-bottom .right-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+}
 
-    .right-bottom .right-right .right-right1 {
-        width: 100%;
-        height: 999px;
-        background: yellow;
-    }
+.right-bottom .right-right .right-right1 {
+  width: 100%;
+  height: 999px;
+  background: yellow;
+}
 
-    .right-bottom .right-right .right-right2 {
-        width: 100%;
-        flex: 1;
-        margin-top: 20px;
-        background: red;
-    }
+.right-bottom .right-right .right-right2 {
+  width: 100%;
+  flex: 1;
+  margin-top: 20px;
+  background: red;
+}
 </style>
