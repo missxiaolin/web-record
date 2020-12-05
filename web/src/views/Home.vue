@@ -15,7 +15,9 @@
               :growth-last-month="growthLastMonth"
             ></total-user>
           </div>
-          <div class="left2">2</div>
+          <div class="left2">
+            <average-age :data="ageData"></average-age>
+          </div>
           <div class="left3">3</div>
           <div class="left4">4</div>
           <div class="left5">5</div>
@@ -97,19 +99,16 @@ export default {
     .separator {
         width: 100%;
         height: 10px;
-        background: rgb(92, 88, 89);
     }
 
     .center {
         width: 100%;
         flex: 1;
         display: flex;
-        background: rebeccapurple;
     }
 
     .center .left {
         flex: 0 0 860px;
-        background: red;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -121,12 +120,10 @@ export default {
 
     .center .left .left1 {
         height: 300px;
-        background: green;
     }
 
     .center .left .left2 {
         height: 320px;
-        background: yellow;
     }
 
     .center .left .left3 {
