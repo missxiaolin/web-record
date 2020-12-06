@@ -20,7 +20,9 @@
             :avg-age="averageAge"
             ></average-age>
           </div>
-          <div class="left3">3</div>
+          <div class="left3">
+            <total-device :data="deviceData"></total-device>
+          </div>
           <div class="left4">4</div>
           <div class="left5">5</div>
           <div class="left6">6</div>
@@ -132,7 +134,6 @@ body,
 
 .center .left .left3 {
   height: 280px;
-  background: mediumblue;
 }
 
 .center .left .left4 {

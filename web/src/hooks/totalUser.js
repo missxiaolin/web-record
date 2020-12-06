@@ -22,6 +22,7 @@ const ageMockData = [
         color: 'rgb(251, 253, 142)'
     }
 ]
+const deviceMockData = { "totalDevices": 1070909, "devices": [{ "key": "Android", "value": 423676 }, { "key": "iOS", "value": 373581 }, { "key": "PC", "value": 273652 }] }
 
 export default function () {
     let todayUser = ref(1000),
@@ -29,6 +30,7 @@ export default function () {
         growthLastMonth = ref(15),
         averageAge = ref(1),
         ageData = ref(ageMockData),
+        deviceData = ref(deviceMockData),
         task = '';
 
     onMounted(() => {
@@ -42,6 +44,12 @@ export default function () {
                 item.startValue = item.value
                 item.value = item.value + 10
             })
+            const _deviceData = {...deviceData.value}
+            _deviceData.totalDevices = _deviceData.totalDevices + 10
+            _deviceData.devices.forEach(item => {
+                item.value = item.value + 3
+            })
+            deviceData.value = _deviceData
             ageData.value = _ageData
         }, 3000);
     })
@@ -54,6 +62,7 @@ export default function () {
         growthLastDay,
         growthLastMonth,
         averageAge,
-        ageData
+        ageData,
+        deviceData
     }
 }
