@@ -23,7 +23,9 @@
           <div class="left3">
             <total-device :data="deviceData"></total-device>
           </div>
-          <div class="left4">4</div>
+          <div class="left4">
+            <total-gender :data="genderData"></total-gender>
+          </div>
           <div class="left5">5</div>
           <div class="left6">6</div>
         </div>
@@ -138,12 +140,10 @@ body,
 
 .center .left .left4 {
   height: 230px;
-  background: burlywood;
 }
 
 .center .left .left5 {
   height: 360px;
-  background: mediumorchid;
 }
 
 .center .left .left6 {
