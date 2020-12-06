@@ -49,10 +49,14 @@
 <script>
 import { ref, onMounted } from "vue";
 import totalUserData from "../hooks/totalUser";
+import AverageAge from '../components/AverageAge/AverageAge'
+
 
 export default {
   name: "Home",
-  components: {},
+  components: {
+    AverageAge
+  },
   setup(props) {
     let isLoading = true;
     return {
