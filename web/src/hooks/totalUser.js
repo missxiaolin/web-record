@@ -34,7 +34,7 @@ export default function () {
         ageData = ref(ageMockData),
         deviceData = ref(deviceMockData),
         genderData = ref(genderMockData),
-        riderData = ref(riderData),
+        riderData = ref(riderMockData),
         task = '';
 
     onMounted(() => {

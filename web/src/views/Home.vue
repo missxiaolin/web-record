@@ -26,7 +26,9 @@
           <div class="left4">
             <total-gender :data="genderData"></total-gender>
           </div>
-          <div class="left5">5</div>
+          <div class="left5">
+            <total-rider :data="riderData"></total-rider>
+          </div>
           <div class="left6">6</div>
         </div>
         <div class="right">
