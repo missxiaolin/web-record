@@ -29,7 +29,9 @@
           <div class="left5">
             <total-rider :data="riderData"></total-rider>
           </div>
-          <div class="left6">6</div>
+          <div class="left6">
+            <hot-category :data="hotCategoryData"></hot-category>
+          </div>
         </div>
         <div class="right">
           <div class="right-top1">right-top1</div>
