@@ -34,7 +34,9 @@
           </div>
         </div>
         <div class="right">
-          <div class="right-top1">right-top1</div>
+          <div class="right-top1">
+            <center-header></center-header>
+          </div>
           <div class="right-top2">right-top2</div>
           <div class="right-bottom">
             <div class="right-left">
