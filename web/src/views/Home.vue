@@ -35,7 +35,7 @@
         </div>
         <div class="right">
           <div class="right-top1">
-            <center-header></center-header>
+            <center-header :data="headerData"></center-header>
           </div>
           <div class="right-top2">right-top2</div>
           <div class="right-bottom">
