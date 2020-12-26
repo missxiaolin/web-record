@@ -161,13 +161,11 @@ body,
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: blue;
 }
 
 .center .right .right-top1 {
   width: 100%;
   height: 206px;
-  background: darkblue;
 }
 
 .center .right .right-top2 {
