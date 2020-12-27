@@ -39,6 +39,8 @@ export default function () {
         riderData = ref(riderMockData),
         hotCategoryData = ref(hotCategoryMockData),
         headerData = ref(headerMockData),
+        categoryData = ['ALL', '北京', '上海', '深圳', '杭州', '南京', '武汉'],
+        categoryDataTwo = ['订单量', '销售额', '用户数', '退单量'],
         task = '';
 
     onMounted(() => {
@@ -75,6 +77,8 @@ export default function () {
         genderData,
         riderData,
         hotCategoryData,
-        headerData
+        headerData,
+        categoryData,
+        categoryDataTwo
     }
 }

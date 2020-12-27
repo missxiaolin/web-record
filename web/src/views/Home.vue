@@ -37,11 +37,15 @@
           <div class="right-top1">
             <center-header :data="headerData"></center-header>
           </div>
-          <div class="right-top2">right-top2</div>
+          <div class="right-top2">
+            <transform-category :data="categoryData"></transform-category>
+          </div>
           <div class="right-bottom">
             <div class="right-left">
               <div class="right-left1">right-left1</div>
-              <div class="right-left2">right-left2</div>
+              <div class="right-left2">
+                <transform-category :data="categoryDataTwo"></transform-category>
+              </div>
               <div class="right-left3">right-left3</div>
               <div class="right-left4">right-left4</div>
             </div>
@@ -172,7 +176,7 @@ body,
 .center .right .right-top2 {
   width: 100%;
   height: 48px;
-  background: cadetblue;
+  margin: 10px 0;
 }
 
 .center .right .right-bottom {
@@ -196,7 +200,6 @@ body,
 
 .right-bottom .right-left .right-left2 {
   height: 80px;
-  background: green;
 }
 
 .right-bottom .right-left .right-left3 {
