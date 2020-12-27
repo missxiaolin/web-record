@@ -38,13 +38,15 @@
             <center-header :data="headerData"></center-header>
           </div>
           <div class="right-top2">
-            <transform-category :data="categoryData"></transform-category>
+            <transform-category 
+            :data="categoryData"
+            ></transform-category>
           </div>
           <div class="right-bottom">
             <div class="right-left">
               <div class="right-left1">right-left1</div>
               <div class="right-left2">
-                <transform-category :data="categoryDataTwo"></transform-category>
+                <transform-category :data="categoryDataTwo" :color="['rgb(178, 209, 126)', 'rgb(116, 166, 49)']"></transform-category>
               </div>
               <div class="right-left3">right-left3</div>
               <div class="right-left4">right-left4</div>
