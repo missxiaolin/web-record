@@ -1,11 +1,6 @@
 <template>
   <div>
-      <button @click="add">{{ state.count }}</button>
-        double count: {{doubleCount}}
-        <button @click="gotoAbout">测试跳转</button>
-        <button @click="updateNumber">vuex 测试</button>
-        <div>{{number}}</div>
-        <div>{{aa}}</div>
+      <base-scroll-list></base-scroll-list>
   </div>
 </template>
 <script>
@@ -13,16 +8,16 @@ import useTest from './useTest'
 
 export default {
     setup() {
-        const { add, state, doubleCount, gotoAbout, number, updateNumber, aa } = useTest()
         return {
-            add,
-            state,
-            doubleCount,
-            gotoAbout,
-            number,
-            updateNumber,
-            aa
+            
         }
     }
 }
 </script>
+
+<style>
+    #app {
+        align-items:flex-start;
+        justify-content: flex-start;
+    }
+</style>
