@@ -13,11 +13,20 @@ export default {
     const headerStyle = ref([]);
     const headerHeight = ref(40);
     const config = ref({});
+    let data = [];
+    for (let i = 0; i < 5; i++) {
+      data.push([
+        `同学${i}`,
+        `年龄${Math.floor(Math.random() * 10 + 20)}`,
+        `身高${Math.floor(Math.random() * 10 + 20)}`,
+      ]);
+    }
     config.value = {
       headerData: ["姓名", "年龄", "月薪"],
-      headerStyle: [{ color: "red" }],
+      headerStyle: [{ color: "red"}],
       headerHeight: 40,
-      headerIndex: true
+      headerIndex: true,
+      data,
     };
 
     return {
