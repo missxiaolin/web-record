@@ -14,7 +14,7 @@ export default {
     const headerHeight = ref(40);
     const config = ref({});
     let data = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 20; i++) {
       data.push([
         `同学${i}`,
         `年龄${Math.floor(Math.random() * 10 + 20)}`,
@@ -24,9 +24,17 @@ export default {
     config.value = {
       headerData: ["姓名", "年龄", "月薪"],
       headerStyle: [{ color: "red"}],
+      headerFontSize: 24,
+      headerColor: '#fff',
+      rowColor: '#000',
+      rowFontSize: 20,
+      rowStyle: [{ color: "blue"}],
+      rowBg: ['rgb(40, 40, 40)', 'rgb(55, 55, 55)'],
+      aligns: ['center'],
       headerHeight: 40,
       headerIndex: true,
       data,
+      rowNum: 10
     };
 
     return {
