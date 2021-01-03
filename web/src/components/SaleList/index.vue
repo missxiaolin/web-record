@@ -13,13 +13,12 @@ export default {
   },
   setup(props) {
     const config = ref({});
+    const header = ref([]);
+    const headerStyle = ref([]);
+    const headerHeight = ref(40);
 
     const update = () => {
-    
-        console.log(props.data)
-      const header = ref([]);
-      const headerStyle = ref([]);
-      const headerHeight = ref(40);
+      
       let data = [];
       for (let i = 0; i < 60; i++) {
         data.push([
@@ -43,22 +42,25 @@ export default {
         data,
         rowNum: 10,
       };
+    };
 
-      onMounted(() => {
-          update()
-      })
+    onMounted(() => {
+      update();
+    });
 
-      const stop = watch(() => props.data, () => {
-          update()
-          stop()
-      })
+    const stop = watch(
+      () => props.data,
+      () => {
+        update();
+        stop();
+      }
+    );
 
-      return {
-        header,
-        headerStyle,
-        headerHeight,
-        config,
-      };
+    return {
+      header,
+      headerStyle,
+      headerHeight,
+      config,
     };
   },
 };
