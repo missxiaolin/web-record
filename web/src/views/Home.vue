@@ -44,7 +44,9 @@
           </div>
           <div class="right-bottom">
             <div class="right-left">
-              <div class="right-left1">right-left1</div>
+              <div class="right-left1">
+                <GdbTimelineChart />
+              </div>
               <div class="right-left2">
                 <transform-category :data="categoryDataTwo" :color="['rgb(178, 209, 126)', 'rgb(116, 166, 49)']"></transform-category>
               </div>
@@ -68,12 +70,13 @@
 import { ref, onMounted } from "vue";
 import totalUserData from "../hooks/totalUser";
 import SaleList from '../components/SaleList'
-
+import GdbTimelineChart from '../components/GdpTimelineChart/index'
 
 export default {
   name: "Home",
   components: {
-    SaleList
+    SaleList,
+    GdbTimelineChart
   },
   setup(props) {
     let isLoading = true;
