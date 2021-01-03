@@ -8,13 +8,15 @@ import useTest from "./useTest";
 import { ref } from "vue";
 
 export default {
+  components: {
+  },
   setup() {
     const header = ref([]);
     const headerStyle = ref([]);
     const headerHeight = ref(40);
     const config = ref({});
     let data = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 10; i++) {
       data.push([
         `同学${i}`,
         `年龄${Math.floor(Math.random() * 10 + 20)}`,

@@ -52,7 +52,9 @@
               <div class="right-left4">right-left4</div>
             </div>
             <div class="right-right">
-              <div class="right-right1">right-right1</div>
+              <div class="right-right1">
+                <sale-list :data="salesListData"></sale-list>
+              </div>
               <div class="right-right2">right-right1</div>
             </div>
           </div>
@@ -65,11 +67,13 @@
 <script>
 import { ref, onMounted } from "vue";
 import totalUserData from "../hooks/totalUser";
+import SaleList from '../components/SaleList'
 
 
 export default {
   name: "Home",
   components: {
+    SaleList
   },
   setup(props) {
     let isLoading = true;
@@ -197,7 +201,6 @@ body,
 
 .right-bottom .right-left .right-left1 {
   height: 999px;
-  background: red;
 }
 
 .right-bottom .right-left .right-left2 {
@@ -206,12 +209,10 @@ body,
 
 .right-bottom .right-left .right-left3 {
   height: 350px;
-  background: deeppink;
 }
 
 .right-bottom .right-left .right-left4 {
   height: 224px;
-  background: forestgreen;
 }
 
 .right-bottom .right-right {
@@ -220,18 +221,17 @@ body,
   flex-direction: column;
   justify-content: space-between;
   margin-left: 10px;
+  /* margin-right: 20px; */
 }
 
 .right-bottom .right-right .right-right1 {
   width: 100%;
   height: 999px;
-  background: yellow;
 }
 
 .right-bottom .right-right .right-right2 {
   width: 100%;
   flex: 1;
   margin-top: 20px;
-  background: red;
 }
 </style>
