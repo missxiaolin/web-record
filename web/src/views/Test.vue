@@ -1,49 +1,52 @@
 <template>
   <div class="box">
-    <base-scroll-list :config="config"></base-scroll-list>
+    <vue-echarts :options="options" />
   </div>
 </template>
 <script>
-import useTest from "./useTest";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 export default {
-  components: {
-  },
+  components: {},
   setup() {
-    const header = ref([]);
-    const headerStyle = ref([]);
-    const headerHeight = ref(40);
-    const config = ref({});
-    let data = [];
-    for (let i = 0; i < 10; i++) {
-      data.push([
-        `同学${i}`,
-        `年龄${Math.floor(Math.random() * 10 + 20)}`,
-        `身高${Math.floor(Math.random() * 10 + 20)}`,
-      ]);
-    }
-    config.value = {
-      headerData: ["姓名", "年龄", "月薪"],
-      headerStyle: [{ color: "red"}],
-      headerFontSize: 24,
-      headerColor: '#fff',
-      rowColor: '#000',
-      rowFontSize: 20,
-      rowStyle: [{ color: "blue"}],
-      rowBg: ['rgb(40, 40, 40)', 'rgb(55, 55, 55)'],
-      aligns: ['center'],
-      headerHeight: 40,
-      headerIndex: true,
-      data,
-      rowNum: 10
+    const options = ref({});
+    const update = () => {
+      options.value = {
+        baseOption: {
+          timeline: {
+            axisType: 'category',
+            data: [
+              {
+                value: '2002-01-01',
+                symbol: 'diamond',
+                symbolSize: 20
+              },
+              '2003-01-01',
+              '2004-01-01',
+              '2005-01-01',
+              '2006-01-01',
+              '2007-01-01',
+              '2008-01-01',
+              '2009-01-01',
+              '2010-01-01',
+              '2011-01-01',
+            ],
+            label: {
+              formatter(v) {
+                return new Date(v).getFullYear()
+              }
+            }
+          }
+        },
+        options: []
+      };
     };
 
+    onMounted(() => {
+      update();
+    });
     return {
-      header,
-      headerStyle,
-      headerHeight,
-      config,
+      options,
     };
   },
 };
@@ -55,7 +58,7 @@ export default {
   justify-content: flex-start;
 }
 .box {
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
 }
 </style>

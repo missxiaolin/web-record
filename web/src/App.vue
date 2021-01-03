@@ -9,4 +9,8 @@
   width: 50px;
   height: 50px;
 }
+#icon-wrapper {
+  width: 100%;
+  height: 100%;
+}
 </style>
