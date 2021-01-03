@@ -23,13 +23,13 @@ export default {
         if (i % 2 === 0) {
           headerIndexData[
             i
-          ] = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
+          ] = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background: rgb(40, 40, 40);">
             <div style="width:15px;height:15px;background:rgb(72,122,72);border-radius:50%;border:1px solid #fff;"/>
           </div>`;
         } else {
           headerIndexData[
             i
-          ] = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
+          ] = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background: rgb(40, 40, 40);">
             <div style="width:15px;height:15px;background:rgb(38,88,104);border-radius:50%;border:1px solid #fff;"/>
           </div>`;
         }
