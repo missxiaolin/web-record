@@ -1,6 +1,8 @@
 <template>
   <div class="box">
-    <js-map-warning></js-map-warning>
+    <!-- <js-map-warning></js-map-warning> -->
+    <!-- <rotaing-earth></rotaing-earth> -->
+    <order-map></order-map>
   </div>
 </template>
 <script>

@@ -45,7 +45,7 @@
           <div class="right-bottom">
             <div class="right-left">
               <div class="right-left1">
-                <GdbTimelineChart />
+                <order-map></order-map>
               </div>
               <div class="right-left2">
                 <transform-category :data="categoryDataTwo" :color="['rgb(178, 209, 126)', 'rgb(116, 166, 49)']"></transform-category>
