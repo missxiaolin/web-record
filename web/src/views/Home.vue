@@ -15,10 +15,7 @@
             ></total-user>
           </div>
           <div class="left2">
-            <average-age 
-            :data="ageData"
-            :avg-age="averageAge"
-            ></average-age>
+            <average-age :data="ageData" :avg-age="averageAge"></average-age>
           </div>
           <div class="left3">
             <total-device :data="deviceData"></total-device>
@@ -38,9 +35,7 @@
             <center-header :data="headerData"></center-header>
           </div>
           <div class="right-top2">
-            <transform-category 
-            :data="categoryData"
-            ></transform-category>
+            <transform-category :data="categoryData"></transform-category>
           </div>
           <div class="right-bottom">
             <div class="right-left">
@@ -48,9 +43,14 @@
                 <order-map></order-map>
               </div>
               <div class="right-left2">
-                <transform-category :data="categoryDataTwo" :color="['rgb(178, 209, 126)', 'rgb(116, 166, 49)']"></transform-category>
+                <transform-category
+                  :data="categoryDataTwo"
+                  :color="['rgb(178, 209, 126)', 'rgb(116, 166, 49)']"
+                ></transform-category>
               </div>
-              <div class="right-left3">right-left3</div>
+              <div class="right-left3">
+                <real-time-order :data="realTimeOrderData"></real-time-order>
+              </div>
               <div class="right-left4">right-left4</div>
             </div>
             <div class="right-right">
@@ -69,14 +69,14 @@
 <script>
 import { ref, onMounted } from "vue";
 import totalUserData from "../hooks/totalUser";
-import SaleList from '../components/SaleList'
-import GdbTimelineChart from '../components/GdpTimelineChart/index'
+import SaleList from "../components/SaleList";
+import GdbTimelineChart from "../components/GdpTimelineChart/index";
 
 export default {
   name: "Home",
   components: {
     SaleList,
-    GdbTimelineChart
+    GdbTimelineChart,
   },
   setup(props) {
     let isLoading = true;
