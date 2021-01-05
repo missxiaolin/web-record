@@ -49,7 +49,9 @@
                 ></transform-category>
               </div>
               <div class="right-left3">
-                <real-time-order :data="realTimeOrderData"></real-time-order>
+                <fly-box startColor="rgb(251, 253, 142)">
+                  <real-time-order :data="realTimeOrderData"></real-time-order>
+                </fly-box>
               </div>
               <div class="right-left4">right-left4</div>
             </div>
