@@ -53,7 +53,9 @@
                   <real-time-order :data="realTimeOrderData"></real-time-order>
                 </fly-box>
               </div>
-              <div class="right-left4">right-left4</div>
+              <div class="right-left4">
+                <schedule-view :data="scheduleViewData"></schedule-view>
+              </div>
             </div>
             <div class="right-right">
               <div class="right-right1">
