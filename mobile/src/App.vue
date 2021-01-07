@@ -3,7 +3,7 @@
 </template>
 
 <style lang="scss">
-html, body, #app {
+#app {
   margin: 0;
   padding: 0;
   width: 100%;

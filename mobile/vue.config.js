@@ -1,0 +1,20 @@
+const px2rem = require('postcss-px2rem')
+
+const postcss = px2rem({
+    remUnit: 32
+})
+
+
+module.exports = {
+    lintOnSave: false,
+    publicPath: './',
+    css: {
+        loaderOptions: {
+            postcss: {
+                plugins: {
+                    postcss
+                }
+            }
+        }
+    }
+}
